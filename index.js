@@ -39,7 +39,7 @@ const eserver =app.listen(PORT, () => {
 const io=new Server(eserver,{
    
     cors: {
-      origin: "https://gleaming-dragon-7c7498.netlify.app",
+      origin: "https://delightful-mousse-0f683c.netlify.app",
       // credentials: true,
     },
 });
@@ -49,7 +49,7 @@ io.on("connection",(socket)=>{
    
 
        socket.on("add user", (userid) => {
-          
+        console.log("user Connetcted-"+userid)  
         if(users.length===0)
          {   
             
@@ -66,13 +66,16 @@ io.on("connection",(socket)=>{
       });
 
       socket.on("new message", async(newMessageRecieved,senderChat,senderid) => {
+        console.log("message send by-" +senderid)
         if(users.length===0) return
           let chatUsers =await findUSerandChat(senderChat.chat._id)
 
           chatUsers.forEach((user) => {
            
             if (user ===senderid ) return;
+
               let socket_id=users.find(user1=>user1.userid===user)?.socketid
+              console.log("message sent to-"+socket_id)
               socket.to(socket_id).emit("message recieved", senderChat.chat._id);
           //  console.log(user.socketid)
           //  socket.to(user.socketid).emit("message recieved", user);
