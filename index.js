@@ -18,7 +18,7 @@ const PORT=process.env.PORT||8080
 
 const connectDB=async()=>{
     try {
-       
+      
        const conn=await mongoose.connect(process.env.MONGO_URL);
        console.log("db connected")
     } catch (error) {
@@ -39,7 +39,7 @@ const eserver =app.listen(PORT, () => {
 const io=new Server(eserver,{
    
     cors: {
-      origin: "http://localhost:3000",
+      origin: "https://gleaming-dragon-7c7498.netlify.app",
       // credentials: true,
     },
 });

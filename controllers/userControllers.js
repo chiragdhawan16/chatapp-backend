@@ -111,7 +111,7 @@ export const loginController = async (req, res) => {
   } catch (err) {
     res.status(500).send({
       success: false,
-      message: "Error in login",
+      message: "Error in login chirag",
       err
     });
   }
