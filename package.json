@@ -15,5 +15,7 @@
     "jsonwebtoken": "^9.0.1",
     "mongoose": "^7.3.2",
     "socket.io": "^4.7.1"
+  },"engines": {
+    "node": ">=14 <15"
   }
 }
