@@ -39,7 +39,7 @@ const eserver =app.listen(PORT, () => {
 const io=new Server(eserver,{
    
     cors: {
-      origin: "https://delightful-mousse-0f683c.netlify.app",
+      // origin: "https://delightful-mousse-0f683c.netlify.app",
       // credentials: true,
     },
 });
